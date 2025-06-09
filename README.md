@@ -42,6 +42,8 @@ chillzone-js-games/
 ```html
 <li><a href="games/your-name-game-name/index.html">Your Game Title</a></li>
 ```
+<li><a href="games/mounika-calculator/index.html">Calculator by mounika</a></li>
+
 
 6. **Commit your changes**, push to your GitHub repo, and **raise a Pull Request (PR)**
 7. Once approved, your game will be featured on the homepage! 🎉
