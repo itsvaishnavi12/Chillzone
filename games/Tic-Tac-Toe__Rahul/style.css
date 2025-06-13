@@ -1,0 +1,266 @@
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+              "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+          background-color: rgb(30, 41, 59);
+          color: white;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 16px;
+      }
+
+      .game-container {
+          background-color: rgb(30, 41, 59);
+          border: 1px solid rgb(51, 65, 85);
+          border-radius: 8px;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+          padding: 32px;
+          max-width: 448px;
+          width: 100%;
+      }
+
+      .header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 32px;
+      }
+
+      .header-left {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+      }
+
+      .player-symbols {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+      }
+
+      .player-symbols .x {
+          color: rgb(34, 211, 238);
+          font-size: 18px;
+          font-weight: 700;
+      }
+
+      .player-symbols .o {
+          color: rgb(251, 146, 60);
+          font-size: 18px;
+          font-weight: 700;
+      }
+
+      .turn-indicator {
+          display: flex;
+          align-items: center;
+          background-color: rgb(51, 65, 85);
+          border-radius: 8px;
+          gap: 8px;
+          padding: 4px 12px;
+      }
+
+      .turn-indicator .player {
+          font-size: 14px;
+          font-weight: 500;
+          color: rgb(148, 163, 184);
+      }
+
+      .turn-indicator .player.active.x {
+          color: rgb(34, 211, 238);
+      }
+
+      .turn-indicator .player.active.o {
+          color: rgb(251, 146, 60);
+      }
+
+      .turn-text {
+          font-size: 14px;
+          color: rgb(148, 163, 184);
+      }
+
+      .reset-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: transparent;
+          border: none;
+          color: rgb(148, 163, 184);
+          cursor: pointer;
+          padding: 8px;
+          border-radius: 6px;
+          transition: all 0.2s;
+          width: 36px;
+          height: 36px;
+      }
+
+      .reset-button:hover {
+          color: rgb(226, 232, 240);
+          background-color: rgb(51, 65, 85);
+      }
+
+      .reset-icon {
+          width: 16px;
+          height: 16px;
+      }
+
+      .game-board {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 12px;
+          margin-bottom: 32px;
+      }
+
+      .cell {
+          aspect-ratio: 1;
+          background-color: rgb(51, 65, 85);
+          border: none;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 36px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.2s;
+          min-height: 80px;
+      }
+
+      .cell:hover:not(.filled) {
+          background-color: rgb(71, 85, 105);
+      }
+
+      .cell.filled {
+          cursor: default;
+      }
+
+      .cell .x {
+          color: rgb(34, 211, 238);
+      }
+
+      .cell .o {
+          color: rgb(251, 146, 60);
+      }
+
+      .game-status {
+          text-align: center;
+          margin-bottom: 24px;
+          font-size: 20px;
+          font-weight: 700;
+          min-height: 28px;
+      }
+
+      .game-status.x-wins {
+          color: rgb(34, 211, 238);
+      }
+
+      .game-status.o-wins {
+          color: rgb(251, 146, 60);
+      }
+
+      .game-status.tie {
+          color: rgb(203, 213, 225);
+      }
+
+      .score-board {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 12px;
+          margin-bottom: 24px;
+      }
+
+      .score-card {
+          border-radius: 8px;
+          padding: 12px;
+          text-align: center;
+      }
+
+      .score-card.x {
+          background-color: rgb(6, 182, 212);
+      }
+
+      .score-card.tie {
+          background-color: rgb(71, 85, 105);
+      }
+
+      .score-card.o {
+          background-color: rgb(249, 115, 22);
+      }
+
+      .score-label {
+          font-size: 14px;
+          font-weight: 500;
+          margin-bottom: 4px;
+      }
+
+      .score-card.x .score-label,
+      .score-card.o .score-label {
+          color: rgb(15, 23, 42);
+      }
+
+      .score-card.tie .score-label {
+          color: rgb(203, 213, 225);
+      }
+
+      .score-value {
+          font-size: 18px;
+          font-weight: 700;
+      }
+
+      .score-card.x .score-value,
+      .score-card.o .score-value {
+          color: rgb(15, 23, 42);
+      }
+
+      .score-card.tie .score-value {
+          color: rgb(203, 213, 225);
+      }
+
+      .reset-scores {
+          display: flex;
+          justify-content: center;
+      }
+
+      .reset-scores-button {
+          background: transparent;
+          border: 1px solid rgb(71, 85, 105);
+          color: rgb(148, 163, 184);
+          padding: 8px 16px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 14px;
+          transition: all 0.2s;
+      }
+
+      .reset-scores-button:hover {
+          background-color: rgb(51, 65, 85);
+          color: rgb(226, 232, 240);
+      }
+
+      @media (max-width: 480px) {
+          .game-container {
+              padding: 24px;
+              margin: 16px;
+          }
+
+          .cell {
+              min-height: 60px;
+              font-size: 28px;
+          }
+
+          .header {
+              flex-direction: column;
+              gap: 16px;
+              align-items: stretch;
+          }
+
+          .header-left {
+              justify-content: center;
+          }
+      }
