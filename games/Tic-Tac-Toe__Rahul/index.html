@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="game-container">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-left">
+          <div class="player-symbols">
+            <span class="x">X</span>
+            <span class="o">O</span>
+          </div>
+
+          <div class="turn-indicator">
+            <span class="player x active xer" id="player-x">X</span>
+            <span class="turn-text">TURN</span>
+            <span class="player o oer" id="player-o">O</span>
+          </div>
+        </div>
+
+        <button class="reset-button" id="reset-game" title="Reset Game">
+          <svg class="reset-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+            <path d="M3 3v5h5"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Game Board -->
+      <div class="game-board" id="game-board">
+        <button class="cell cell1" data-index="0"></button>
+        <button class="cell cell2" data-index="1"></button>
+        <button class="cell cell3" data-index="2"></button>
+        <button class="cell cell4" data-index="3"></button>
+        <button class="cell cell5" data-index="4"></button>
+        <button class="cell cell6" data-index="5"></button>
+        <button class="cell cell7" data-index="6"></button>
+        <button class="cell cell8" data-index="7"></button>
+        <button class="cell cell9" data-index="8"></button>
+      </div>
+
+      <!-- Game Status -->
+      <div class="game-status" id="game-status"></div>
+
+      <!-- Score Board -->
+      <div class="score-board">
+        <div class="score-card x">
+          <div class="score-label">X</div>
+          <div class="score-value" id="x-score">0</div>
+        </div>
+
+        <div class="score-card tie">
+          <div class="score-label">TIE</div>
+          <div class="score-value" id="tie-score">0</div>
+        </div>
+
+        <div class="score-card o">
+          <div class="score-label">O</div>
+          <div class="score-value" id="o-score">0</div>
+        </div>
+      </div>
+
+      <!-- Reset Scores -->
+      <div class="reset-scores">
+        <button class="reset-scores-button" id="reset-scores">
+          Reset Scores
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
